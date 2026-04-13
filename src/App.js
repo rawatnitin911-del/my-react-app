@@ -1,13 +1,12 @@
-import './App.css';
+import './App.css'; 
 import Header from './MyComponents/Header';
 import { Todos } from "./MyComponents/Todos";
 import { Addtodo } from "./MyComponents/Addtodo";
 import { Footer } from "./MyComponents/Footer";
 import About from "./MyComponents/About";
-  // <-- yahi About chalega
 import React, { useState, useEffect } from 'react';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Routes,
   Route
 } from "react-router-dom";
@@ -35,36 +34,22 @@ function App() {
   }, [todos]);
 
   return (
-    <>
-      <Router>
-        <Header title="SHIVI Nitin" searchBar={false} />
+    <Router>
+      <Header title="OUR ROUTINE" searchBar={false} />
 
-        <Routes>
+      <Routes>
+        <Route path="/about" element={<About />} />
+        <Route path="/" element={
+          <>
+            <Addtodo addtodo={addtodo} />
+            <Todos todos={todos} onDelete={onDelete} />
+          </>
+        } />
+      </Routes>
 
-          {/* About Page */}
-          <Route exact path="/about" element={<About />} />
-
-          {/* Home Page */}
-          <Route exact path="/" element={
-            <>
-              <Addtodo addtodo={addtodo} />
-              <Todos todos={todos} onDelete={onDelete} />
-            </>
-          } />
-          
-        </Routes>
-
-        <Footer />
-      </Router>
-    </>
+      <Footer />
+    </Router>
   );
 }
 
 export default App;
-
-
-
-
-
-  
-

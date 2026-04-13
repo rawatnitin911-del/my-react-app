@@ -20,14 +20,14 @@ else{
 
   return (
     <div className="container my-3">
-      <h3>What Shivi Can Do All Day </h3>
+      <h3>DAILY ROUTINE TASK </h3>
 
       <form onSubmit={submit}>
 
         {/* Todo Title */}
         <div className="mb-3">
           <label htmlFor="title" className="form-label">
-            Partner Routine
+            OUR TASK
           </label>
 
           <input
@@ -42,7 +42,7 @@ else{
         {/* Todo Description */}
         <div className="mb-3">
           <label htmlFor="desc" className="form-label">
-            Partner Hobbies
+            OUR GOAL
           </label>
 
           <input
